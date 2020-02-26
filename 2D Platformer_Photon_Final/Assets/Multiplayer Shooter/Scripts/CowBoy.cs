@@ -169,14 +169,16 @@ public class CowBoy : MonoBehaviourPun {
     {
         if (col.gameObject.tag == "Ground")
         {
+            print("isgrounded");
             IsGrounded = false;
+           // rb.velocity = Vector2.zero;
         }
     }
 
    public void Jump()
     {
         if(IsGrounded)
-        rb.AddForce(new Vector2(0, jumpForce * Time.deltaTime));
+        rb.AddForce(new Vector2(0f, jumpForce /** Time.deltaTime*/));
     }
 
 }

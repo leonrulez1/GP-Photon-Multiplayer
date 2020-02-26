@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 using Photon.Realtime;
 
 public class GameManager : MonoBehaviourPunCallbacks {
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviourPunCallbacks {
     private float TimeAmount = 5;
     private bool startRespawn;
     public Text pingrate;
-    
+    public float respawnCount = 2f;
 
     [HideInInspector]
     public GameObject LocalPlayer;
@@ -70,14 +71,22 @@ public class GameManager : MonoBehaviourPunCallbacks {
         TimeAmount -= Time.deltaTime;
         spawnTimer.text = "Respawn in : " + TimeAmount.ToString("F0");
 
-        if (TimeAmount <= 0)
+        if (TimeAmount <= 0 && respawnCount > 0)
         {
             respawnUI.SetActive(false);
             startRespawn = false;
+            respawnCount -= 1;
             PlayerRelocation();
             LocalPlayer.GetComponent<Health>().EnableInputs();
             LocalPlayer.GetComponent<PhotonView>().RPC("Revive", RpcTarget.AllBuffered);
         }
+
+        else if (respawnCount <= 0)
+        {
+            SceneManager.LoadScene("Lose");
+        }
+
+        
     }
 
     public void ToggleLeaveScreen()

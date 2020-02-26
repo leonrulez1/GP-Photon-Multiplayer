@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 
 public class BossHealth : MonoBehaviourPun
@@ -35,6 +36,7 @@ public class BossHealth : MonoBehaviourPun
         collider.enabled = false;
         sr.enabled = false;
         Boss.SetActive(false);
+        SceneManager.LoadScene("Victory");
         //playerCanvas.SetActive(false);
     }
 

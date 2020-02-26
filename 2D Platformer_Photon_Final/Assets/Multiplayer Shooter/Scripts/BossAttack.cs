@@ -76,12 +76,9 @@ public class BossAttack : MonoBehaviourPun
     {
         for (int i = 0; i < spikes.Length; i++)
         {
-            yield return new WaitForSeconds(0.4f);
-            spikes[i].SetActive(true);
-            yield return new WaitForSeconds(0.2f);
-            spikes[i].SetActive(false);
-            attack = false;
 
+            yield return new WaitForSeconds(2f);
+            Instantiate(projectile, spikes[i].transform.position, spikes[i].transform.rotation);
 
         }
     }

@@ -29,6 +29,8 @@ MonoBehaviour:
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
+  - Attacking
+  - BossHealthUpdate
   - ChangeDirection
   - ClickRpc
   - death
@@ -45,10 +47,5 @@ MonoBehaviour:
   - UpdatePlayerList
   - YouGotKilledBy
   - YouKilled
-  - BossHealthUpdate
-  - Attack
-  - Attacking
-  - Update
-  - SpawnBoss
   DisableAutoOpenWizard: 1
   ShowSettings: 0

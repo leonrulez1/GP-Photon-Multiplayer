@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 
 public class Health : MonoBehaviourPun {
 
     public Image fillImage;
     public float health = 10;
+    
 
     public Rigidbody2D rb;
     public SpriteRenderer sr;
@@ -34,17 +36,20 @@ public class Health : MonoBehaviourPun {
         collider.enabled = false;
         sr.enabled = false;
         playerCanvas.SetActive(false);
+        
+
     }
 
     [PunRPC]
     public void Revive()
     {
-        rb.gravityScale = 1;
+        rb.gravityScale = 5;
         collider.enabled = true;
         sr.enabled = true;
         playerCanvas.SetActive(true);
         fillImage.fillAmount = 1;
         health = 10;
+       
     }
 
     public void EnableInputs()
