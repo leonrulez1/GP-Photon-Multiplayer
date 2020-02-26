@@ -11,10 +11,12 @@ public class DisManager : MonoBehaviourPunCallbacks {
     public GameObject MenuButton;
     public GameObject ReconnectButton;
     public Text StatusText;
+    public bool disconnectedFromTheGame;
 
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        disconnectedFromTheGame = false;
     }
 
     private void Update()
@@ -22,6 +24,8 @@ public class DisManager : MonoBehaviourPunCallbacks {
         if(Application.internetReachability == NetworkReachability.NotReachable)
         {
             DisUi.SetActive(true);
+
+            disconnectedFromTheGame = true;
 
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {

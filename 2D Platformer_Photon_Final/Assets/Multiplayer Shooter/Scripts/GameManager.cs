@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-using UnityEngine.SceneManagement;
 using Photon.Realtime;
 
 public class GameManager : MonoBehaviourPunCallbacks {
@@ -12,7 +11,6 @@ public class GameManager : MonoBehaviourPunCallbacks {
     public GameObject playerPrefab;
     public GameObject canvas;
     public GameObject sceneCam;
-    
 
     public Text spawnTimer;
     public GameObject respawnUI;
@@ -20,7 +18,6 @@ public class GameManager : MonoBehaviourPunCallbacks {
     private float TimeAmount = 5;
     private bool startRespawn;
     public Text pingrate;
-    public float respawnCount = 2f;
 
     [HideInInspector]
     public GameObject LocalPlayer;
@@ -30,7 +27,6 @@ public class GameManager : MonoBehaviourPunCallbacks {
 
     public GameObject feedbox;
     public GameObject feedText_Prefab;
-    
 
     public GameObject KillGotKilledFeedBox;
 
@@ -44,7 +40,6 @@ public class GameManager : MonoBehaviourPunCallbacks {
     {
         cp.AddLocalPlayer();
         cp.GetComponent<PhotonView>().RPC("UpdatePlayerList", RpcTarget.OthersBuffered, PhotonNetwork.NickName);
-       
     }
 
     void Update()
@@ -71,22 +66,14 @@ public class GameManager : MonoBehaviourPunCallbacks {
         TimeAmount -= Time.deltaTime;
         spawnTimer.text = "Respawn in : " + TimeAmount.ToString("F0");
 
-        if (TimeAmount <= 0 && respawnCount > 0)
+        if (TimeAmount <= 0)
         {
             respawnUI.SetActive(false);
             startRespawn = false;
-            respawnCount -= 1;
             PlayerRelocation();
             LocalPlayer.GetComponent<Health>().EnableInputs();
             LocalPlayer.GetComponent<PhotonView>().RPC("Revive", RpcTarget.AllBuffered);
         }
-
-        else if (respawnCount <= 0)
-        {
-            SceneManager.LoadScene("Lose");
-        }
-
-        
     }
 
     public void ToggleLeaveScreen()
@@ -123,8 +110,6 @@ public class GameManager : MonoBehaviourPunCallbacks {
         PhotonNetwork.LeaveRoom();
         PhotonNetwork.LoadLevel(0);
     }
-
-    
 
     // Player respawns at random location
     public void PlayerRelocation()
