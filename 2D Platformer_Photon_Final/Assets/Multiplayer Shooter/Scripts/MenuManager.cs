@@ -45,6 +45,21 @@ public class MenuManager : MonoBehaviourPunCallbacks {
     }
     #endregion
 
+    #region Instructions
+
+    public GameObject instructionsLog;
+
+    public void instructionsBtnPressed()
+    {
+        instructionsLog.SetActive(true);
+    }
+
+
+
+
+
+    #endregion
+
     // Called when the client is connected to the Master Server and ready for matchmaking and other tasks.
     public override void OnConnectedToMaster()
     {
