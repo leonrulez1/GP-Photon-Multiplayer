@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviourPunCallbacks {
 
@@ -16,6 +17,7 @@ public class MenuManager : MonoBehaviourPunCallbacks {
     [SerializeField]
     private InputField UserNameInput, CreateRoomInput, JoinRoomInput;
 
+    // Loading Screen on load
     #region MainStart
     public GameObject MainStartMenu;
     bool hasMainStart;
@@ -43,7 +45,7 @@ public class MenuManager : MonoBehaviourPunCallbacks {
             MainStartMenu.SetActive(false);
         }
     }
-    #endregion
+    #endregion // Load S
 
     #region Instructions
 
@@ -53,6 +55,18 @@ public class MenuManager : MonoBehaviourPunCallbacks {
     {
         instructionsLog.SetActive(true);
     }
+    #endregion
+
+    //Quit the game
+    #region Quit Game
+
+        public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit Game");
+    }
+
+
     #endregion
 
     // Called when the client is connected to the Master Server and ready for matchmaking and other tasks.
