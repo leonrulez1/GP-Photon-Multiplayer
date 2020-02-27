@@ -248,9 +248,9 @@ MonoBehaviour:
   minDistance: 0
   followDistance: 0
   target: {fileID: 1466069642483326}
-  offset: {x: -1.3, y: 1.53, z: 0}
-  MinBoundary: {x: -2.65, y: 0}
-  MaxBoundary: {x: 3.88, y: 0.8}
+  offset: {x: 0, y: 0, z: 0}
+  MinBoundary: {x: 1, y: 1}
+  MaxBoundary: {x: 80, y: 1}
 --- !u!1 &1124141310397840
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   PlayerName: {fileID: 114280105648820822}
   IsGrounded: 0
   DisableInputs: 0
-  jumpForce: 1000
+  jumpForce: 900
   MyName: 
 --- !u!114 &114495739945176918
 MonoBehaviour:

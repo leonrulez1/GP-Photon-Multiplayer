@@ -86,4 +86,14 @@ public class Health : MonoBehaviourPun {
         go.GetComponent<Text>().color = Color.green;
         Destroy(go, 3);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Death")
+        {
+            print("diededed");
+            health = 0;
+            print("0");
+        }
+    }
 }
