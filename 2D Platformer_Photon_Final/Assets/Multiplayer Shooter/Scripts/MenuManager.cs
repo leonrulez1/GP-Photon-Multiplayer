@@ -69,6 +69,16 @@ public class MenuManager : MonoBehaviourPunCallbacks {
 
     #endregion
 
+    // Makes the game windowed or fullscreen for options
+    #region Set Full Screen
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+        Debug.Log("Fullscreen is" + isFullscreen);
+    }
+    #endregion
+
+
     // Called when the client is connected to the Master Server and ready for matchmaking and other tasks.
     public override void OnConnectedToMaster()
     {
