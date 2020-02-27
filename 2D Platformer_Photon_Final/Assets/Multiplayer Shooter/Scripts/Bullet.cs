@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviourPun {
     public float MoveSpeed = 8;
     
     public float DestroyTime=  2f;
-    public float bulletDamage = 1f;
+    public float bulletDamage = 0.1f;
 
     public string killerName;
     public GameObject localPlayerObj;
@@ -76,6 +76,7 @@ public class Bullet : MonoBehaviourPun {
                 print("HitBoss");
                 //RPC is called on each client
                 target.RPC("BossHealthUpdate", RpcTarget.AllBuffered, bulletDamage);
+                print("hurted");
                 target.GetComponent<HurtEffect>().GotHit();
                
 

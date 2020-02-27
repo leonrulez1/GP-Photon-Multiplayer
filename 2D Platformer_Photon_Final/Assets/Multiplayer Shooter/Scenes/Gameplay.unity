@@ -13775,11 +13775,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: db1c3fdb887951a4895b5613a6fb1066, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -47931,6 +47931,7 @@ MonoBehaviour:
   sceneCam: {fileID: 562156663}
   spawnTimer: {fileID: 2121036129}
   respawnUI: {fileID: 1367657808}
+  respawnCount: 2
   pingrate: {fileID: 1919514383}
   LocalPlayer: {fileID: 0}
   LeaveScreen: {fileID: 1346239936}
@@ -101596,11 +101597,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 44673865792486160, guid: ef40e1808e447f54f94a6c2ff762d74e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 75792538914782046, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
@@ -101614,32 +101610,32 @@ PrefabInstance:
     - target: {fileID: 5040465606628267128, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5040465606674004739, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5040465607001439711, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5040465607023870215, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5040465607217940132, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5040465607332777701, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5040465607538183164, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
@@ -101649,22 +101645,22 @@ PrefabInstance:
     - target: {fileID: 5040465607766108776, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5040465608105490710, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5040465608272279902, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5040465608348733796, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}
       propertyPath: viewIdField
-      value: 11
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5040465608403121475, guid: ef40e1808e447f54f94a6c2ff762d74e,
         type: 3}

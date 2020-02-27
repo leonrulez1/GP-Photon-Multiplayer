@@ -13,6 +13,8 @@ public class CowBoy : MonoBehaviourPun {
     public PhotonView photonview;
     public  Animator anim;
     private bool AllowMoving = true;
+    public AudioSource audio;
+    public AudioClip gunShot;
 
     public GameObject BulletPrefab;
     public Transform BulletSpawnPointRight;
@@ -71,6 +73,7 @@ public class CowBoy : MonoBehaviourPun {
         if (Input.GetKeyDown(KeyCode.RightControl) && anim.GetBool("IsMove") == false)
         {
             shot();
+            audio.PlayOneShot(gunShot);
         }
         else if (Input.GetKeyUp(KeyCode.RightControl))
         {

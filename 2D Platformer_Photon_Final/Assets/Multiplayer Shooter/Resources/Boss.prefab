@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillImage: {fileID: 710776537}
-  health: 1
+  health: 4
   rb: {fileID: 11752538320112648}
   sr: {fileID: 173872846171150754}
   collider: {fileID: 18043635117914422}

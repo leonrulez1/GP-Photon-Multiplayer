@@ -8,7 +8,7 @@ using Photon.Pun;
 public class BossHealth : MonoBehaviourPun
 {
     public Image fillImage;
-    public float health = 1;
+    public float health = 3;
 
     public Rigidbody2D rb;
     public SpriteRenderer sr;
@@ -16,8 +16,11 @@ public class BossHealth : MonoBehaviourPun
     public GameObject playerCanvas;
     public GameObject Boss;
 
-   // public CowBoy playerScript;
-   // public GameObject KillGotKilledText;
+    // public CowBoy playerScript;
+    // public GameObject KillGotKilledText;
+
+
+   
 
     public void CheckHealth()
     {
@@ -65,6 +68,7 @@ public class BossHealth : MonoBehaviourPun
         
         health = fillImage.fillAmount;
         CheckHealth();
+        
     }
 
     //[PunRPC]
