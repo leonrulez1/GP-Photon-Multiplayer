@@ -53,11 +53,6 @@ public class MenuManager : MonoBehaviourPunCallbacks {
     {
         instructionsLog.SetActive(true);
     }
-
-
-
-
-
     #endregion
 
     // Called when the client is connected to the Master Server and ready for matchmaking and other tasks.
